@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="hammerhead" size="0.150000 0.083282" />
     <ImageTarget name="splash_67" size="0.100000 0.108703" />
     <ImageTarget name="teeth_cropped_35" size="0.065000 0.071341" />
     <ImageTarget name="island_cropped_72" size="0.135600 0.175454" />
