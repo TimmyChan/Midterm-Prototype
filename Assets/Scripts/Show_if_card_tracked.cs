@@ -24,6 +24,7 @@ public class Show_if_card_tracked : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // initiate a couple of spheres
         habitat1 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         habitat2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         // Make habitat a child of the image target
