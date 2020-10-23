@@ -4,37 +4,41 @@ using UnityEngine;
 using UnityEngine.Events;
 using Vuforia;
 
-// SOURCE: https://stackoverflow.com/questions/54614388/how-to-play-a-video-in-a-vuforia-image-target-in-unity
-public class ImageTargetVideoController : MonoBehaviour, ITrackableEventHandler
+namespace Vuforia
 {
-    private TrackableBehaviour mTrackableBehaviour; 
-    public UnityEvent myStartEvent; 
-    public UnityEvent myStopEvent;
 
-    void Start()
+    // SOURCE: https://stackoverflow.com/questions/54614388/how-to-play-a-video-in-a-vuforia-image-target-in-unity
+    public class ImageTargetVideoController : MonoBehaviour, ITrackableEventHandler
     {
-        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
-        if (mTrackableBehaviour)
-        {
-            mTrackableBehaviour.RegisterTrackableEventHandler(this);
-        }
-    }
+        private TrackableBehaviour mTrackableBehaviour;
+        public UnityEvent myStartEvent;
+        public UnityEvent myStopEvent;
 
-    public void OnTrackableStateChanged(
-                                    TrackableBehaviour.Status previousStatus,
-                                    TrackableBehaviour.Status newStatus)
-    {
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+        void Start()
         {
-            // When target is found
-            myStartEvent.Invoke();
+            mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+            if (mTrackableBehaviour)
+            {
+                mTrackableBehaviour.RegisterTrackableEventHandler(this);
+            }
         }
-        else
+
+        public void OnTrackableStateChanged(
+                                        TrackableBehaviour.Status previousStatus,
+                                        TrackableBehaviour.Status newStatus)
         {
-            // When target is lost
-            myStopEvent.Invoke();
+            if (newStatus == TrackableBehaviour.Status.DETECTED ||
+                newStatus == TrackableBehaviour.Status.TRACKED ||
+                newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+            {
+                // When target is found
+                myStartEvent.Invoke();
+            }
+            else
+            {
+                // When target is lost
+                myStopEvent.Invoke();
+            }
         }
     }
 }

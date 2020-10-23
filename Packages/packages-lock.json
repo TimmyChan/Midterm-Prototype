@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "com.ptc.vuforia.engine": {
-      "version": "8.5.9",
+      "version": "8.6.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://registry.packages.developer.vuforia.com"
     },
     "com.unity.collab-proxy": {
       "version": "1.2.16",
