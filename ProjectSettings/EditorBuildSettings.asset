@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Prototype.v2.unity
+    guid: 814360cfbaafb354e8978a183f05f28c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ce3c9e435ecca6042bc9515d3db19d82,
       type: 2}
